@@ -1,3 +1,7 @@
+#Check Point session and fingerorint files
+fingerprints.json
+sid.json
+
 # Local .terraform directories
 **/.terraform/*
 
@@ -32,3 +36,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Terraform lock files
+.terraform.lock.hcl
