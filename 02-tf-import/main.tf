@@ -9,6 +9,10 @@ import {
     id = data.checkpoint_management_show_objects.query.objects[0].uid
 }
 
+module "policy" {
+  source = "./policy"
+}
+
 // Trigger the publish resource every time there is a change on any of the configuration files in a specific module
 // Expression to use to hash all files in directory policy that is used by the policy module
 locals {
