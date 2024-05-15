@@ -1,5 +1,5 @@
 resource "checkpoint_management_package" "AWS_Perimeter" {
-  name = "${random_id.id.hex}-AWS_Perimeter"
+  name = "${random_id.id.b64_url}-AWS_Perimeter"
   color = "orange"
   threat_prevention = true
   access = true
@@ -12,7 +12,7 @@ resource "checkpoint_management_package" "AWS_Perimeter" {
 }
 
 resource "checkpoint_management_access_layer" "AWS_Perimeter_URLF" {
-  name = "${random_id.id.hex}-${checkpoint_management_package.AWS_Perimeter.name} URLF"
+  name = "${random_id.id.b64_url}-${checkpoint_management_package.AWS_Perimeter.name} URLF"
   applications_and_url_filtering = true
   firewall =true
   color = "blue"
@@ -20,7 +20,7 @@ resource "checkpoint_management_access_layer" "AWS_Perimeter_URLF" {
 }
 
 resource "checkpoint_management_access_rule" "blockrule1" {
-                name = "${random_id.id.hex}-Block Categories"
+                name = "${random_id.id.b64_url}-Block Categories"
                 enabled = true
                 action = "Drop"
                 source = [ "Any" ]
@@ -41,7 +41,7 @@ resource "checkpoint_management_access_rule" "blockrule1" {
                    }
                 }
 resource "checkpoint_management_access_rule" "allowrule2" {
-                name = "${random_id.id.hex}-Allowed Categories"
+                name = "${random_id.id.b64_url}-Allowed Categories"
                 enabled = true
                 action = "Accept"
                 action_settings = {
@@ -65,7 +65,7 @@ resource "checkpoint_management_access_rule" "allowrule2" {
                    }
                 }
 resource "checkpoint_management_access_rule" "allowrule3" {
-                name = "${random_id.id.hex}-Allow All"
+                name = "${random_id.id.b64_url}-Allow All"
                 enabled = true
                 action = "Accept"
                 action_settings = {

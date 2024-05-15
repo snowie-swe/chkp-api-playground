@@ -1,5 +1,5 @@
 resource "checkpoint_management_package" "AWS_AutoScale" {
-  name = "${random_id.id.hex}-AWS_AutoScale"
+  name = "${random_id.id.b64_url}-AWS_AutoScale"
   color = "orange"
   threat_prevention = true
   access = true

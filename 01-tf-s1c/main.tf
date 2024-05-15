@@ -35,6 +35,12 @@ module "policy" {
   source = "./policy"
 }
 
+output "pod_id_output" {
+  value = module.policy.pod_id_output
+  description = "Your random genereated pod ID"
+  depends_on = [ module.policy ]
+}
+
 // Example 1 - Trigger the publish resource every time there is a change on any of the configuration files in a specific module
 // Expression to use to hash all files in directory policy that is used by the policy module
 locals {
