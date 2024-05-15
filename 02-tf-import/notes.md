@@ -4,7 +4,7 @@
 * Create a new host object on the management server
 * Edit ``` main.tf```  and chage the filter parameter to match the name of your host onbject
 * run ```terraform init```
-* run ```terraform plan -generate-config-out=generated.tf``` this will generate the terraform configuration block
+* run ```terraform plan -generate-config-out=policy/generated.tf``` this will generate the terraform configuration block
 * run ```terraform apply``` this will imprt the object to the terrafrom state file
 * Make some changes to the code block in the ``` generated.tf``` 
   * Do not change the name as it will make the query datasource unable to find the object and cause terraform to fail.
