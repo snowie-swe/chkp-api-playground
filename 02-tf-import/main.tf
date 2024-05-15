@@ -3,10 +3,6 @@ data "checkpoint_management_show_objects" "query" {
     filter = "jims host"
 }
 
-output "testing2" {
-  value = data.checkpoint_management_show_objects.query.objects[0].uid
-}
-
 # terraform plan -generate-config-out=imported-nets.tf
 import {
     to = checkpoint_management_host.imported
