@@ -6,7 +6,7 @@
 * run ```terraform init```
 * run ```terraform plan -generate-config-out=policy/generated.tf``` this will generate the terraform configuration block
 * run ```terraform apply``` this will imprt the object to the terrafrom state file
-* Make some changes to the code block in the ``` generated.tf``` 
+* Make some changes to the code block in the ```./policy/generated.tf``` 
   * Do not change the name as it will make the query datasource unable to find the object and cause terraform to fail.
 * run ```terraform apply``` and see the changed beeing applied int SmartConsol
 * Delete the object in SmartConsole and publish
