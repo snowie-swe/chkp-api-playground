@@ -3,11 +3,11 @@ data "checkpoint_management_show_objects" "query" {
     filter = "jims host"
 }
 
-# terraform plan -generate-config-out=imported-nets.tf
-import {
-    to = module.policy.checkpoint_management_host.imported
+# terraform plan -generate-config-out=policy/generated.tf
+/*import {
+    to = checkpoint_management_host.imported
     id = data.checkpoint_management_show_objects.query.objects[0].uid
-}
+}*/
 
 module "policy" {
   source = "./policy"
