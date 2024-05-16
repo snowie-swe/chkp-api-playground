@@ -8,6 +8,8 @@ Example Policy creation with the Check Point Terraform Provider
 
 Source your credentials for the SmartCenter or MDS using the creds file. The Check Point Terraform provider will read them from the enviroment. For Example
 
+If you are running Github Codespace add them Codespaces secrets.
+
 On unix/linux run: ```source creds_``` or ```source creds_MDS```
 
 ### Publish best options and practices
