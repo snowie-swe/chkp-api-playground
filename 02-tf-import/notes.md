@@ -25,7 +25,14 @@
            id = data.checkpoint_management_show_objects.query.objects[0].  uid 
        }
         ```
-  2 run ***terraform apply*** this will import the object to the terrafrom state file
+  2. run ***terraform apply*** this will import the object to the terrafrom state file
+  3. Edit **main.tf** and comment out the import block as the resource is now imported and this is not needed anymore and will just cause issues if you keep it there, it should look something like this:
+     ```
+     /*import { 
+         to = checkpoint_management_host.imported
+         id = data.checkpoint_management_show_objects.query.objects[0].uid 
+     }*/
+      ```
 * Make some changes to the code block in the **./policy/generated.tf**
   * **Do not change the name** as it will make the query datasource unable to find the object and cause terraform to fail.
 * run **terraform apply** and see the changed beeing applied int SmartConsol
