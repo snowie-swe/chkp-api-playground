@@ -27,7 +27,7 @@
         ```
   2 run ***terraform apply*** this will import the object to the terrafrom state file
 * Make some changes to the code block in the **./policy/generated.tf**
-  * Do not change the name as it will make the query datasource unable to find the object and cause terraform to fail.
+  * **Do not change the name** as it will make the query datasource unable to find the object and cause terraform to fail.
 * run **terraform apply** and see the changed beeing applied int SmartConsol
 * Delete the object in **SmartConsole** and **publish**.
 * run **terraform apply** and see that the objec is recreated by terrafrom since terraform is now the source of truth for this object.
