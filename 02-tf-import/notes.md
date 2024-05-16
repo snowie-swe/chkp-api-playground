@@ -29,7 +29,7 @@
   3. Edit **main.tf** and comment out the import block as the resource is now imported and this is not needed anymore and will just cause issues if you keep it there, it should look something like this:
      ```
      /*import { 
-         to = checkpoint_management_host.imported
+         to = module.policy.checkpoint_management_host.imported
          id = data.checkpoint_management_show_objects.query.objects[0].uid 
      }*/
       ```
