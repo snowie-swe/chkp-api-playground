@@ -1,7 +1,5 @@
 [checkpoint:children]
 checkpoint_mgmt
-checkpoint_gw1
-checkpoint_gw2
 
 [checkpoint_mgmt]
 192.168.233.10 ansible_user=api_user ansible_password=xxxx

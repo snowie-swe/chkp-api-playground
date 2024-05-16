@@ -1,0 +1,10 @@
+# inventory.yaml file in YAML format
+hosts:
+    hostname: "checkpoint_mgmt"
+    - vars:
+        ansible_host: "{{ lookup('env','CHECKPOINT_SERVER') }}"
+        cloud_mgmt_id: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
+        api_key: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
+        ansible_httpapi_use_ssl: True
+        ansible_httpapi_validate_certs: False
+        ansible_network_os: check_point.mgmt.checkpoint

@@ -5,11 +5,14 @@ If you have not already done so, to prepare the enviroment follow the **Prepare 
 ## Install ansible
 Follow these steps to install ansible in your Codespace instance
 ```bash
+sudo apt install pipx -y --no-install-recommends
 pipx install --include-deps ansible
 ```
 
 ## Add latest Check Point management ansible collection
 got to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/ to find the instructions on how to install the Check Point management ansible collection
+
+If you get an notification that "Nothing to do. All requested collections are already installed" run the install of the collection again using `--force`
 
 ## Deploy the entprise policy using Ansible
 
