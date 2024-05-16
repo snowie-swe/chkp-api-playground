@@ -1,6 +1,6 @@
 # Build simple Check Point policy with IAC using Terraform  
 
-**Prepare the enviroment**
+## Prepare the enviroment
 
 You need to add the following Codespace secrets
 * CHECKPOINT_API_KEY 
@@ -20,6 +20,7 @@ Under the **Web request structure** section you can find the sever fqdn and clou
 
 Launch your code space in your fork of the repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
 
+## Deploy the policy
 You are now ready to deploy the policy using terraform in codespace
 ```bash
 # enter this folder
