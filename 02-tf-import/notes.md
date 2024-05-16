@@ -1,7 +1,7 @@
 # Import Check Point host object 
 ### To state file and generte terrafrom configuration block
 
-* Create a new host object on the management server
+* Using Web SmartConsole in S1C, create a new **host object** on the **management server**
 * Edit **main.tf**
   1. Change the **filter** parameter to in the **checkpoint_management_show_objects** block match the name of the  host object you created.
   2. Remove the multi line comment "/*" "*/" from the **import** block to activate import of resource it should look like this:
