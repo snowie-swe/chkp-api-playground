@@ -16,7 +16,7 @@
       ```
 * run **terraform init**
 * run **terraform plan -generate-config-out=policy/generated.tf** this will generate the terraform configuration block and save the file in the **./policy** folder
-* Terrafrom import block is a exprimental feature, the import{} does not natively support to import within modules, as a workaroundm, edit **main.tf**
+* Terrafrom import block is a exprimental feature, the import{} does not natively support to import state within modules, as a workaroundm, edit **main.tf**
   1.  Add **module.policy.** 
    to the line **checkpoint_management_host.imported** in the **import** block. The result should look something like this
         ```
