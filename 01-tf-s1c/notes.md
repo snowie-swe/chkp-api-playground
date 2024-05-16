@@ -1,4 +1,4 @@
-# Build simple Check Point policy with IAC using Terraforom  
+# Build simple Check Point policy with IAC using Terraform  
 
 **Prepare the enviroment**
 
