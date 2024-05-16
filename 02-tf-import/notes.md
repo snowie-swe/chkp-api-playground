@@ -1,6 +1,8 @@
 # Import Check Point host object 
 ### To state file and generte terrafrom configuration block
 
+**Note:** Remember to save any chages made in a file before moving to next step, this can be done by pressing ctrl+s
+
 * Using Web SmartConsole in S1C, create a new **host object** on the **management server**
 * Edit **main.tf**
   1. Change the **filter** parameter to in the **checkpoint_management_show_objects** block match the name of the  host object you created.
