@@ -40,3 +40,8 @@
 * Run **terraform taint checkpoint_management_publish.publish** to force a publish, this is needed since there has not been any change in the files in the policy folder to triggers a publish.
 * run **terraform apply** and see that the objec is recreated by terrafrom since terraform is now the source of truth for this object.
 * Delete the code block in **./policy/generated.tf** file , and run **terraform apply** and see that the host object is deleted in SmartConsole.
+
+**Done**: Go to next task in 03-ansible-s1c
+```bash
+cd 03-ansible-s1c/
+```
