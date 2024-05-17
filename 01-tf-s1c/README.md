@@ -11,14 +11,15 @@ Here are the instruction on how to add Codespace secrets: https://docs.github.co
 
 Login in to your infinity account https://portal.checkpoint.com and deploy a new Smart-1 Cloud application, you can select demo for a 24h runtime.
 
-Go to **Smart-1 Cloud** > **API & SmartConsole** and generate a Management API key. Copy this key to a CHECKPOINT_API_KEY codespace secrets
+Go to **Smart-1 Cloud** > **API & SmartConsole** and generate a Management API key. 
+<br> Copy this key to a CHECKPOINT_API_KEY codespace secrets
 
-Under the **Web request structure** section you can find the sever fqdn and cloud management ID for you Smart-1 Cloud service, add thes to the following codespace secrets
+Under the **Web request structure** section you can find the sever **FQDN** and **cloud management ID** for you Smart-1 Cloud service, add these to the following codespace secrets
 
 * CHECKPOINT_SERVER
 * CHECKPOINT_CLOUD_MGMT_ID
 
-Launch your code space in your fork of the repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
+Launch your codespace in your repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
 
 ## Deploy the policy
 You are now ready to deploy the policy using terraform in codespace
