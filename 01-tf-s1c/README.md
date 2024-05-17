@@ -38,3 +38,8 @@ terraform apply
 ```
 
 Go to the Web based Smart Console in Smart-1 Cloud and se the changes applied by terraform.
+
+**Done**: Go to next task in 02-tf-import
+```bash
+cd 02-tf-import/
+```
