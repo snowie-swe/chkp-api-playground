@@ -1550,7 +1550,7 @@
     content_negate: false
     track:
       type: Log
-      per_session: false
+      per_session: true
       per_connection: true
       accounting: false
       enable_firewall_session: false
