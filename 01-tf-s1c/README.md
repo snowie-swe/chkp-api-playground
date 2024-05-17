@@ -2,24 +2,23 @@
 
 ## Prepare the enviroment
 
-You need to add the following Codespace secrets
-* CHECKPOINT_API_KEY 
-* CHECKPOINT_SERVER
-* CHECKPOINT_CLOUD_MGMT_ID
+1. Login in to your infinity account https://portal.checkpoint.com and deploy a new Smart-1 Cloud application, you can select demo for a 24h runtime.
 
-Here are the instruction on how to add Codespace secrets: https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces#adding-a-secret
+2. You need to add the following Codespace secrets to you github account and connect them to your repository.
+   <br>Here are the instruction on how to add Codespace secrets: https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces#adding-a-secret
+   * CHECKPOINT_API_KEY 
+   * CHECKPOINT_SERVER
+   * CHECKPOINT_CLOUD_MGMT_ID
 
-Login in to your infinity account https://portal.checkpoint.com and deploy a new Smart-1 Cloud application, you can select demo for a 24h runtime.
 
-Go to **Smart-1 Cloud** > **API & SmartConsole** and generate a Management API key. 
+3. Go to **Smart-1 Cloud** > **API & SmartConsole** and generate a Management API key. 
 <br> Copy this key to a CHECKPOINT_API_KEY codespace secrets
 
-Under the **Web request structure** section you can find the sever **FQDN** and **cloud management ID** for you Smart-1 Cloud service, add these to the following codespace secrets
+4. Under the **Web request structure** section you can find the sever **FQDN** and **cloud management ID** for you Smart-1 Cloud service.
+   * Copy the sever FQDN to a CHECKPOINT_SERVER codespace secret
+   * Copy the cloud management ID to a CHECKPOINT_CLOUD_MGMT_ID codespace secrets
 
-* CHECKPOINT_SERVER
-* CHECKPOINT_CLOUD_MGMT_ID
-
-Launch your codespace in your repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
+5. Launch your codespace in your repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
 
 ## Deploy the policy
 You are now ready to deploy the policy using terraform in codespace
