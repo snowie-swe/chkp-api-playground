@@ -1,7 +1,11 @@
-# inventory.yaml file in YAML format
-hosts:
-    hostname: "checkpoint_mgmt"
-    - vars:
+- name: Build inventory
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create a dynamic inventory
+      add_host:
+        hostname: "checkpoint_mgmt"
         ansible_host: "{{ lookup('env','CHECKPOINT_SERVER') }}"
         cloud_mgmt_id: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
         api_key: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
