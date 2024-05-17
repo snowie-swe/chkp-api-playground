@@ -1,5 +1,5 @@
 # chkp-api-playground
-Check Point API workshop playground area, allowing engineers to get hands on experience on the Check Point management API and the intergrtion with Terraform and Ansible
+Check Point API workshop playground area, allowing engineers to get hands-on experience on the Check Point management API and the intergrtion with Terraform and Ansible
 
 ## To get started:
 
