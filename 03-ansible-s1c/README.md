@@ -92,3 +92,5 @@ state: absent
 ```
 Got to the Web based Smart Console in Smart-1 Cloud and check what happened with your object.
 What does state: absent mean?
+
+**Done:** Take a break!
