@@ -21,6 +21,8 @@
 
 
 6. Launch your codespace in your repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
+   <br>![image](https://github.com/jimoq/chkp-api-playground/assets/44175368/38e3aa1b-1a68-493b-b380-467d9b2172cc)
+
 
 ## Deploy the policy
 You are now ready to deploy the policy using terraform in codespace
