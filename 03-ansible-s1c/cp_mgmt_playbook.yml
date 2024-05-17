@@ -1,42 +1,6 @@
-- name: Build inventory
-  hosts: localhost
-  connection: local
-  gather_facts: false
-  tasks:
-#    - name: Create a dynamic inventory
-#      add_host:
-#        hostname: "{{ lookup('env','CHECKPOINT_SERVER') }}"
-#        ansible_host: "{{ lookup('env','CHECKPOINT_SERVER') }}"
-#        cloud_mgmt_id: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
-#        api_key: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
-#        ansible_httpapi_use_ssl: True
-#        ansible_httpapi_validate_certs: False
-#        ansible_network_os: check_point.mgmt.checkpoint
-#
-  tasks:
-    - name: Create a dynamic inventory
-      add_host:
-        hostname: chkp-jimo-msp-cu-a5o5601s.maas.checkpoint.com
-        # ansible_host: chkp-jimo-msp-cu-nrfhdbup.maas.checkpoint.com
-        cloud_mgmt_id: 5344a9a7-a90b-48c7-b1b0-9122a68571cd
-        api_key: n01zHEfQwGBuK8ZzmL1+dA==
-        ansible_httpapi_use_ssl: True
-        ansible_httpapi_validate_certs: False
-        ansible_network_os: check_point.mgmt.checkpoint
-  
-    - name: display ansible_host
-      debug:
-        msg: "{{ lookup('env','CHECKPOINT_SERVER') }}"
-    - name: display cloud_mgmt_id
-      debug:
-        msg: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
-    - name: display api key
-      debug:
-        msg: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
-
 - name: Playbook for rules and objects exported to Ansible from the Check Point API
   connection: httpapi
-  hosts: chkp-jimo-msp-cu-a5o5601s.maas.checkpoint.com
+  hosts: s1c
   gather_facts: false
   collections:
   - check_point.mgmt

@@ -1,14 +1,11 @@
-- name: Build inventory
-  hosts: localhost
-  connection: local
-  gather_facts: no
-  tasks:
-    - name: Create a dynamic inventory
-      add_host:
-        hostname: "checkpoint_mgmt"
-        ansible_host: "{{ lookup('env','CHECKPOINT_SERVER') }}"
-        cloud_mgmt_id: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
-        api_key: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
-        ansible_httpapi_use_ssl: True
-        ansible_httpapi_validate_certs: False
-        ansible_network_os: check_point.mgmt.checkpoint
+all:
+  children:
+    check_point:
+      hosts:
+        s1c:
+          ansible_host: "{{ lookup('env','CHECKPOINT_SERVER') }}"
+          ansible_api_key: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
+          ansible_cloud_mgmt_id: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
+          ansible_httpapi_use_ssl: true
+          ansible_httpapi_validate_certs: false
+          ansible_network_os: check_point.mgmt.checkpoint
