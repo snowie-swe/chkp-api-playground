@@ -13,7 +13,7 @@ Check Point API workshop playground area, allowing engineers to get hands on exp
 <br>![image](https://github.com/jimoq/chkp-api-playground/assets/44175368/cdc1ba76-2df3-48af-9774-e3926dbdff21)
 
 
-4. move forward by following the instructions in the README.md file in 01-tf-sc folder.
+4. Move forward by following the instructions in the README.md file in 01-tf-sc folder.
 <br>![image](https://github.com/jimoq/chkp-api-playground/assets/44175368/042a0123-9d85-46c4-afa3-68f00d3a864b)
 
 ## Resources:
