@@ -15,10 +15,12 @@
 <br> Copy this key to a CHECKPOINT_API_KEY codespace secrets
 
 4. Under the **Web request structure** section you can find the sever **FQDN** and **cloud management ID** for you Smart-1 Cloud service.
+   <br>![image](https://github.com/jimoq/chkp-api-playground/assets/44175368/a7b810f9-9dc9-4bb5-8849-a6562307285f)
    * Copy the sever FQDN to a CHECKPOINT_SERVER codespace secret
    * Copy the cloud management ID to a CHECKPOINT_CLOUD_MGMT_ID codespace secrets
 
-5. Launch your codespace in your repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
+
+6. Launch your codespace in your repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
 
 ## Deploy the policy
 You are now ready to deploy the policy using terraform in codespace
