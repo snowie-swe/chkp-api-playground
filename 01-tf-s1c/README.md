@@ -1,90 +1,36 @@
-# Terraform-CHKP-AWS-April22-2024-Demo - Terraform configuration to demonstrate Check Point security Infrastructure as code
+# Build simple Check Point policy with IAC using Terraform  
 
-You can find the latest Terraform executable at: https://www.terraform.io/downloads.html
+## Prepare the enviroment
 
-You can finf the latest Check Point Terraform provider documentation at: https://registry.terraform.io/providers/CheckPointSW/checkpoint/latest/docs
+You need to add the following Codespace secrets
+* CHECKPOINT_API_KEY 
+* CHECKPOINT_SERVER
+* CHECKPOINT_CLOUD_MGMT_ID
 
-Example Policy creation with the Check Point Terraform Provider
+Here are the instruction on how to add Codespace secrets: https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces#adding-a-secret
 
-Source your credentials for the SmartCenter or MDS using the creds file. The Check Point Terraform provider will read them from the enviroment. For Example
+Login in to your infinity account https://portal.checkpoint.com and deploy a new Smart-1 Cloud application, you can select demo for a 24h runtime.
 
-If you are running Github Codespace add them Codespaces secrets.
+Go to **Smart-1 Cloud** > **API & SmartConsole** and generate a Management API key. Copy this key to a CHECKPOINT_API_KEY codespace secrets
 
-On unix/linux run: ```source creds_``` or ```source creds_MDS```
+Under the **Web request structure** section you can find the sever fqdn and cloud management ID for you Smart-1 Cloud service, add thes to the following codespace secrets
 
-### Publish best options and practices
-As of right now, Terraform does not provide native support for post publish and install-policy. There are a cople of diffrent ways to handle that:
-- Out of band publish using
-  - Python (publish.py)
-  - shell (publish.bat)
-  - publish executable from the Check Point provider source code to publish the changes see https://registry.terraform.io/providers/CheckPointSW/checkpoint/latest/docs#post-apply--destroy-scripts for details.
+* CHECKPOINT_SERVER
+* CHECKPOINT_CLOUD_MGMT_ID
 
-- Trigger field (best practice)
-  
-  From version 1.2 the provider was enhanced where a triggers field for resource install_policy, publish and logout was added for re-execution if there are any changes in this list
-  ```hcl
-  # Put the Check Point configuration in a sub folder and refer to is as a module
-  module "chkp_policy" {
-    source = "./chkp_policy"
-  }
-  
-  # Activate the trigger if there is a change in the configuration files in the folder chkp_policy
-  locals {
-    publish_triggers = [for filename in fileset(path.module, "chkp_policy/*.tf"): filesha256(filename)]
-  }
-  
-  # Make the publish resources dependent of the module and **trigger** it if there is a change in the   configuration files
-  resource "checkpoint_management_publish" "publish" { 
-    depends_on = [ module.policy ]
-    triggers = local.publish_triggers
-  }
-  ```
+Launch your code space in your fork of the repository by clicking on **Code** > **Codespaces** > **Create codespace on main**
 
-- Avoid large bulk publishes
-
-  From version 2.5.0 the provider was enhanced with support to auto publish mode using **auto_publish_batch_size** or via the **CHECKPOINT_AUTO_PUBLISH_BATCH_SIZE** environment variable to configure the number of batch size to automatically run publish.
-
-  ```hcl
-  # Check Point Provider source and version used terraform {
-  required_providers {
-    checkpoint = {
-      source = "checkpointsw/checkpoint"
-      version  = "~> 2.6.0" 
-      }
-    }
-  }
-  # Configure the Check Point Provider
-  provider "checkpoint" {
-    server   = "chkp-mgmt-srv.local"
-    api_key = "Check Point admin api key"
-    context  = "web_api“
-    auto_publish_batch_size = “100”
-  }
-  ```
-
-- Control publish post destroy
-  
-  From version 2.6.0 the provider was enhanced where a new flag was added **run_publish_on_destroy** to **checkpoint_management_publish** which indicates whether to run publish on destroy
-  
-  ```hcl
-  # Make the publish resources dependent of the module and trigger it if there is a change in the   configuration files
-  resource "checkpoint_management_publish" "publish" { 
-    depends_on = [ module.policy ]
-    triggers = local.publish_triggers
-    run_publish_on_destroy = true
-    }
-  ```
-
-
-You execute terraform with:
-```
+## Deploy the policy
+You are now ready to deploy the policy using terraform in codespace
+```bash
+# enter this folder
+cd 01-tf-s1c/
+#
 terraform init
-terraform plan
 terraform apply
+# look at the plan and the changes that will be made
+# Accept by answerign yes
+
 ```
 
-remove everything with: 
-```
-terraform destroy
-```
-The terraform demo will create hosts, networks, services, custom applications, domain objects, cynamic objects, policy packages, layers and populate that policy package with rules.
+Go to the Web based Smart Console in Smart-1 Cloud and se the changes applied by terraform.
