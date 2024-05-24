@@ -1,6 +1,6 @@
 data "checkpoint_management_show_objects" "query" {
     type = "host"
-    filter = "jims host"
+    filter = "magnustest"
 }
 
 # terraform plan -generate-config-out=policy/generated.tf
